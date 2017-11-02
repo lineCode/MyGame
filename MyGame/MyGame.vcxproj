@@ -169,6 +169,7 @@
     <ClInclude Include="Plugins\Imgui\imgui\stb_rect_pack.h" />
     <ClInclude Include="Plugins\Imgui\imgui\stb_textedit.h" />
     <ClInclude Include="Plugins\Imgui\imgui\stb_truetype.h" />
+    <ClInclude Include="Plugins\Imgui\imgui_impl_dx11.h" />
     <ClInclude Include="Plugins\Imgui\imgui_impl_Render.h" />
     <ClInclude Include="Plugins\Nanovg\nanovg\D3D11PixelShader.h" />
     <ClInclude Include="Plugins\Nanovg\nanovg\D3D11PixelShaderAA.h" />
@@ -219,6 +220,7 @@
     <ClCompile Include="Plugins\Imgui\imgui\imgui.cpp" />
     <ClCompile Include="Plugins\Imgui\imgui\imgui_demo.cpp" />
     <ClCompile Include="Plugins\Imgui\imgui\imgui_draw.cpp" />
+    <ClCompile Include="Plugins\Imgui\imgui_impl_dx11.cpp" />
     <ClCompile Include="Plugins\Imgui\imgui_impl_Render.cpp" />
     <ClCompile Include="Plugins\Nanovg\nanovg\demo.c" />
     <ClCompile Include="Plugins\Nanovg\nanovg\nanovg.c" />

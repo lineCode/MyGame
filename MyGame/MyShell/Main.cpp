@@ -215,6 +215,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 const int WINDOWS_MOUSE_CLICK_INDEX = 0;
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
+	g_gameMain.WndProc(hWnd, message, wParam, lParam);
     switch (message)
     {
     case WM_COMMAND:

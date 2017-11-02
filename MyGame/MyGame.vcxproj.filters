@@ -217,6 +217,9 @@
     <ClInclude Include="Runtime\Graphics\Direct3D11\Sprite.h">
       <Filter>Runtime\Graphics</Filter>
     </ClInclude>
+    <ClInclude Include="Plugins\Imgui\imgui_impl_dx11.h">
+      <Filter>Plugins\Imgui</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BaseCode\MyString.cpp">
@@ -315,6 +318,9 @@
     </ClCompile>
     <ClCompile Include="Runtime\Graphics\Direct3D11\Sprite.cpp">
       <Filter>Runtime\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugins\Imgui\imgui_impl_dx11.cpp">
+      <Filter>Plugins\Imgui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -52,8 +52,12 @@ public:
 	void OnKeyDown(UINT uiKey);
 	void OnKeyUp(UINT uiKey);
 
+	void WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
+
 	void ProcessGame();
 	void DestoryGameMain();
+
+	void ShowGUI();
 
 private:
 	class C3SoundGameObj* m_pBackSound;
