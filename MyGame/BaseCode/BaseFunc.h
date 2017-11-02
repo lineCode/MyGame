@@ -141,3 +141,5 @@ inline T* Stride(T* p, size_t offset)
 {
 	return reinterpret_cast<T*>((char*)p + offset);
 }
+
+std::wstring gAnsiToUnicode(const char* szStr);

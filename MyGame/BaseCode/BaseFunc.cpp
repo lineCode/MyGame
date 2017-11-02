@@ -241,3 +241,19 @@ DWORD SysTimeGet(void)
 	DWORD dwTime = newtime.tm_hour * 100 + newtime.tm_min;
 	return dwTime;
 }
+
+std::wstring gAnsiToUnicode(const char* szStr)
+{
+	int nLen = MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, szStr, -1, NULL, 0);
+	if (nLen == 0)
+	{
+		return NULL;
+	}
+	wchar_t* pResult = new wchar_t[nLen];
+	MultiByteToWideChar(CP_ACP, MB_PRECOMPOSED, szStr, -1, pResult, nLen);
+
+	std::wstring strText;
+	strText = pResult;
+	delete[] pResult;
+	return strText;
+}
