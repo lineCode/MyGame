@@ -60,6 +60,9 @@ private:
 	HWND m_hWnd;
 	int m_nWidth;
 	int m_nHeight;
+
+	class D3D11Viewport* m_pD3D11Viewport;
+	class D3DBufferSample* m_pSample;
 };
 
 extern CGameMain g_gameMain;
