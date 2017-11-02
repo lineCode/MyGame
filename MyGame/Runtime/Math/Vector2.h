@@ -1,6 +1,7 @@
 #pragma once
 #include "PlatformInterface.h"
 #include <algorithm>
+#include "BaseFunc.h"
 #include "FloatConversion.h"
 
 

@@ -271,7 +271,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		g_gameMain.OnKeyUp(wParam);
 		break;
 	case WM_ACTIVATE:
-		g_gameMain.OnActivate(LOWORD(wParam), HIWORD(wParam));
+		g_gameMain.OnActivate(LOWORD(wParam), HIWORD(wParam) > 0);
 		break;
     default:
         return DefWindowProc(hWnd, message, wParam, lParam);

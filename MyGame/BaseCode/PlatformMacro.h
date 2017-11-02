@@ -2,6 +2,10 @@
 #include <assert.h>
 
 
+#ifndef _TYPENAME
+#define _TYPENAME(x)  (typeid(x).name())
+#endif
+
 //----------------------------------------------------------
 #ifndef MY_ASSERT
 #ifdef _DEBUG
@@ -34,11 +38,16 @@
 #ifndef DebugAssertIf
 #ifdef _DEBUG
 #define	DebugAssertIf(x) \
-	if(x)	\
-{\
+if(x)	\
+	{\
+		{assert(x); }\
 	}
 #else
-#define	DebugAssertIf(x)  if( (!(x)) ? 1 : 0 )
+#define	DebugAssertIf(x) \
+	if(x)	\
+	{\
+		{ ::LogMyMsg("ASSERT(" #x ") in %d line of %s [%s]", __LINE__, __FILE__, _TYPENAME(x)); }\
+	}
 #endif
 #endif
 

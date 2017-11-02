@@ -134,3 +134,10 @@ inline BYTE ColorGetB(DWORD dwColor)
 {
 	return BYTE(dwColor & 0x000000FF);
 }
+
+
+template<class T>
+inline T* Stride(T* p, size_t offset)
+{
+	return reinterpret_cast<T*>((char*)p + offset);
+}
