@@ -10,6 +10,18 @@ class Matrix4x4f;
 class Quaternionf;
 
 
+/// Uniform transform scales x, y, z in the same amount,
+/// NonUniform transform scales x, y, z differently and might contain skew.
+/// kOddNegativeScaleTransform means that FrontFace(CCW) should be used (An odd number of scale axes is negative)
+enum TransformType
+{
+	kNoScaleTransform = 0,
+	kUniformScaleTransform = 1 << 0,
+	kNonUniformScaleTransform = 1 << 1,
+	kOddNegativeScaleTransform = 1 << 2
+};
+ENUM_FLAGS(TransformType);
+
 bool InvertMatrix4x4_Full(const float* m, float* out);
 bool InvertMatrix4x4_General3D(const float* m, float* out);
 

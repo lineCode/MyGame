@@ -453,7 +453,7 @@ bool LookRotationToMatrix(const Vector3f& viewVec, const Vector3f& upVec, Matrix
 	m->SetOrthoNormalBasis(x, y, z);
 	return true;
 }
-/*
+
 //Left handed
 bool LookRotationToMatrixLeftHanded (const Vector3f& viewVec, const Vector3f& upVec, Matrix3x3f* m)
 {
@@ -477,7 +477,7 @@ return false;
 m->SetOrthoNormalBasis (x, y, z);
 return true;
 }
-*/
+
 
 void GetRotMatrixNormVec(float* out, const float* inVec, float radians)
 {

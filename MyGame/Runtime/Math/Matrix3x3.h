@@ -75,6 +75,7 @@ public:
 // Generates an orthornormal basis from a look at rotation, returns if it was successful
 // (Righthanded)
 bool LookRotationToMatrix(const Vector3f& viewVec, const Vector3f& upVec, Matrix3x3f* m);
+bool LookRotationToMatrixLeftHanded(const Vector3f& viewVec, const Vector3f& upVec, Matrix3x3f* m);
 
 bool MatrixToEuler(const Matrix3x3f& matrix, Vector3f& v);
 void EulerToMatrix(const Vector3f& v, Matrix3x3f& matrix);
