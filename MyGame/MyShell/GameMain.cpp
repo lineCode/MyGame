@@ -14,6 +14,7 @@ CGameMain g_gameMain;
 CGameMain::CGameMain()
 {
 	m_pBackSound = NULL;
+	m_hWnd = NULL;
 }
 
 
@@ -69,6 +70,11 @@ void CGameMain::OnKeyUp(UINT uiKey)
 
 bool CGameMain::InitGameMain(HINSTANCE ins, HWND hWnd, int nWidth, int nHeight, void* hIosMainWnd)
 {
+	m_hWnd = hWnd;
+	m_nWidth = nWidth;
+	m_nHeight = nHeight;
+
+
 	bool bRet = InitSoundEngine("Res", "English(US)");
 	if (!m_pBackSound)
 	{
