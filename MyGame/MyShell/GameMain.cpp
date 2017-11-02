@@ -3,7 +3,7 @@
 #include "C3Sound/C3Sound.h"
 #include "C3Sound/C3SoundGameObj.h"
 #include "C3Sound/Wwise_IDs.h"
-#pragma comment(lib,"C3Sound\\C3Sound.lib")
+#pragma comment(lib,"C3Sound.lib")
 
 #include "Math/Vector2.h"
 #include "Math/Vector3.h"
