@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="BaseCode">
+      <UniqueIdentifier>{8ecb5611-7534-4141-9d28-4e3b4dbbc375}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins">
+      <UniqueIdentifier>{add4230a-3f7c-4212-af43-c06b19ac2fa5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins\Imgui">
+      <UniqueIdentifier>{53ccc75b-aab4-4c79-ab3e-072f95678571}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins\Imgui\imgui">
+      <UniqueIdentifier>{6fe9f53d-03fa-4e48-83ec-0a8009dd6a0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins\Nanovg">
+      <UniqueIdentifier>{0a639d03-5f83-4427-adf1-30ff65c71474}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins\Nanovg\nanovg">
+      <UniqueIdentifier>{856c01c9-b227-4bc7-814e-c98bb5254101}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MyShell">
+      <UniqueIdentifier>{f48e55bb-4af8-4819-9114-cfdbffe41906}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MyShell\Resource">
+      <UniqueIdentifier>{b3e0979e-4986-49d8-87ef-2f4a25ef9c52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins\Wwise">
+      <UniqueIdentifier>{d322f032-5d61-47cd-907c-409915baa33c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Plugins\Wwise\C3Sound">
+      <UniqueIdentifier>{cd61dadc-e995-4594-9645-0361b0eb4224}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BaseCode\MyString.h">
+      <Filter>BaseCode</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseCode\BaseFunc.h">
+      <Filter>BaseCode</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseCode\PlatformInterface.h">
+      <Filter>BaseCode</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseCode\PlatformGlobalFunction.h">
+      <Filter>BaseCode</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseCode\PlatformTypes.h">
+      <Filter>BaseCode</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseCode\PlatformMacro.h">
+      <Filter>BaseCode</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseCode\MyTimer.h">
+      <Filter>BaseCode</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseCode\MyThread.h">
+      <Filter>BaseCode</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseCode\MyLockCs.h">
+      <Filter>BaseCode</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\Imgui\imgui\imconfig.h">
+      <Filter>Plugins\Imgui\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\Imgui\imgui\imgui.h">
+      <Filter>Plugins\Imgui\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\Imgui\imgui\imgui_internal.h">
+      <Filter>Plugins\Imgui\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\Imgui\imgui\stb_rect_pack.h">
+      <Filter>Plugins\Imgui\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\Imgui\imgui\stb_textedit.h">
+      <Filter>Plugins\Imgui\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\Imgui\imgui\stb_truetype.h">
+      <Filter>Plugins\Imgui\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\Imgui\imgui_impl_Render.h">
+      <Filter>Plugins\Imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\Nanovg\nanovg\D3D11PixelShader.h">
+      <Filter>Plugins\Nanovg\nanovg</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\Nanovg\nanovg\D3D11PixelShaderAA.h">
+      <Filter>Plugins\Nanovg\nanovg</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\Nanovg\nanovg\D3D11VertexShader.h">
+      <Filter>Plugins\Nanovg\nanovg</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\Nanovg\nanovg\demo.h">
+      <Filter>Plugins\Nanovg\nanovg</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\Nanovg\nanovg\fontstash.h">
+      <Filter>Plugins\Nanovg\nanovg</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\Nanovg\nanovg\nanovg.h">
+      <Filter>Plugins\Nanovg\nanovg</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\Nanovg\nanovg\nanovg_d3d11.h">
+      <Filter>Plugins\Nanovg\nanovg</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\Nanovg\nanovg\nanovg_gl.h">
+      <Filter>Plugins\Nanovg\nanovg</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\Nanovg\nanovg\nanovg_gl_utils.h">
+      <Filter>Plugins\Nanovg\nanovg</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\Nanovg\nanovg\stb_image.h">
+      <Filter>Plugins\Nanovg\nanovg</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\Nanovg\nanovg\stb_image_write.h">
+      <Filter>Plugins\Nanovg\nanovg</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\Nanovg\nanovg\stb_truetype.h">
+      <Filter>Plugins\Nanovg\nanovg</Filter>
+    </ClInclude>
+    <ClInclude Include="MyShell\GameGraphic.h">
+      <Filter>MyShell</Filter>
+    </ClInclude>
+    <ClInclude Include="MyShell\stdafx.h">
+      <Filter>MyShell</Filter>
+    </ClInclude>
+    <ClInclude Include="MyShell\targetver.h">
+      <Filter>MyShell</Filter>
+    </ClInclude>
+    <ClInclude Include="MyShell\TestBaseCode.h">
+      <Filter>MyShell</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseCode\MySignal.h">
+      <Filter>BaseCode</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseCode\Delegate.h">
+      <Filter>BaseCode</Filter>
+    </ClInclude>
+    <ClInclude Include="MyShell\GameMain.h">
+      <Filter>MyShell</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\Wwise\C3Sound\C3Sound.h">
+      <Filter>Plugins\Wwise\C3Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\Wwise\C3Sound\C3SoundBase.h">
+      <Filter>Plugins\Wwise\C3Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\Wwise\C3Sound\C3SoundGameObj.h">
+      <Filter>Plugins\Wwise\C3Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Plugins\Wwise\C3Sound\Wwise_IDs.h">
+      <Filter>Plugins\Wwise\C3Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="MyShell\Resource.h">
+      <Filter>MyShell\Resource</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BaseCode\MyString.cpp">
+      <Filter>BaseCode</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseCode\BaseFunc.cpp">
+      <Filter>BaseCode</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseCode\PlatformGlobalFunction.cpp">
+      <Filter>BaseCode</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseCode\MyTimer.cpp">
+      <Filter>BaseCode</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseCode\MyThread.cpp">
+      <Filter>BaseCode</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseCode\MyLockCs.cpp">
+      <Filter>BaseCode</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugins\Imgui\imgui\imgui.cpp">
+      <Filter>Plugins\Imgui\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugins\Imgui\imgui\imgui_demo.cpp">
+      <Filter>Plugins\Imgui\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugins\Imgui\imgui\imgui_draw.cpp">
+      <Filter>Plugins\Imgui\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugins\Imgui\imgui_impl_Render.cpp">
+      <Filter>Plugins\Imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugins\Nanovg\nanovg\demo.c">
+      <Filter>Plugins\Nanovg\nanovg</Filter>
+    </ClCompile>
+    <ClCompile Include="Plugins\Nanovg\nanovg\nanovg.c">
+      <Filter>Plugins\Nanovg\nanovg</Filter>
+    </ClCompile>
+    <ClCompile Include="MyShell\stdafx.cpp">
+      <Filter>MyShell</Filter>
+    </ClCompile>
+    <ClCompile Include="MyShell\TestBaseCode.cpp">
+      <Filter>MyShell</Filter>
+    </ClCompile>
+    <ClCompile Include="MyShell\GameMain.cpp">
+      <Filter>MyShell</Filter>
+    </ClCompile>
+    <ClCompile Include="MyShell\Main.cpp">
+      <Filter>MyShell</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="MyShell\MyGame.ico">
+      <Filter>MyShell\Resource</Filter>
+    </Image>
+    <Image Include="MyShell\small.ico">
+      <Filter>MyShell\Resource</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MyShell\MyGame.rc">
+      <Filter>MyShell\Resource</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="MyShell\ReadMe.txt">
+      <Filter>MyShell\Resource</Filter>
+    </Text>
+  </ItemGroup>
+</Project>
