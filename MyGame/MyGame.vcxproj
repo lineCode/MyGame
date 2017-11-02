@@ -156,6 +156,7 @@
     <ClInclude Include="BaseCode\PlatformInterface.h" />
     <ClInclude Include="BaseCode\PlatformMacro.h" />
     <ClInclude Include="BaseCode\PlatformTypes.h" />
+    <ClInclude Include="BaseCode\StringHash.h" />
     <ClInclude Include="MyShell\GameGraphic.h" />
     <ClInclude Include="MyShell\GameMain.h" />
     <ClInclude Include="MyShell\Resource.h" />
@@ -185,6 +186,15 @@
     <ClInclude Include="Plugins\Wwise\C3Sound\C3SoundBase.h" />
     <ClInclude Include="Plugins\Wwise\C3Sound\C3SoundGameObj.h" />
     <ClInclude Include="Plugins\Wwise\C3Sound\Wwise_IDs.h" />
+    <ClInclude Include="Runtime\Graphics\Direct3D11\D3D11Buffer.h" />
+    <ClInclude Include="Runtime\Graphics\Direct3D11\D3D11ConstantBuffer.h" />
+    <ClInclude Include="Runtime\Graphics\Direct3D11\D3D11Shader.h" />
+    <ClInclude Include="Runtime\Graphics\Direct3D11\D3D11Viewport.h" />
+    <ClInclude Include="Runtime\Graphics\Direct3D11\D3DBufferSample.h" />
+    <ClInclude Include="Runtime\Graphics\Direct3D11\DeviceManager.h" />
+    <ClInclude Include="Runtime\Graphics\Direct3D11\Sprite.h" />
+    <ClInclude Include="Runtime\Graphics\Direct3D11\vaDirectXTools.h" />
+    <ClInclude Include="Runtime\Graphics\Direct3D11\VertexType.h" />
     <ClInclude Include="Runtime\Math\FloatConversion.h" />
     <ClInclude Include="Runtime\Math\Matrix3x3.h" />
     <ClInclude Include="Runtime\Math\Matrix4x4.h" />
@@ -192,6 +202,7 @@
     <ClInclude Include="Runtime\Math\Vector2.h" />
     <ClInclude Include="Runtime\Math\Vector3.h" />
     <ClInclude Include="Runtime\Math\Vector4.h" />
+    <ClInclude Include="Transform.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BaseCode\BaseFunc.cpp" />
@@ -200,6 +211,7 @@
     <ClCompile Include="BaseCode\MyThread.cpp" />
     <ClCompile Include="BaseCode\MyTimer.cpp" />
     <ClCompile Include="BaseCode\PlatformGlobalFunction.cpp" />
+    <ClCompile Include="BaseCode\StringHash.cpp" />
     <ClCompile Include="MyShell\GameMain.cpp" />
     <ClCompile Include="MyShell\Main.cpp" />
     <ClCompile Include="MyShell\stdafx.cpp" />
@@ -210,12 +222,22 @@
     <ClCompile Include="Plugins\Imgui\imgui_impl_Render.cpp" />
     <ClCompile Include="Plugins\Nanovg\nanovg\demo.c" />
     <ClCompile Include="Plugins\Nanovg\nanovg\nanovg.c" />
+    <ClCompile Include="Runtime\Graphics\Direct3D11\D3D11Buffer.cpp" />
+    <ClCompile Include="Runtime\Graphics\Direct3D11\D3D11ConstantBuffer.cpp" />
+    <ClCompile Include="Runtime\Graphics\Direct3D11\D3D11Shader.cpp" />
+    <ClCompile Include="Runtime\Graphics\Direct3D11\D3D11Viewport.cpp" />
+    <ClCompile Include="Runtime\Graphics\Direct3D11\D3DBufferSample.cpp" />
+    <ClCompile Include="Runtime\Graphics\Direct3D11\DeviceManager.cpp" />
+    <ClCompile Include="Runtime\Graphics\Direct3D11\Sprite.cpp" />
+    <ClCompile Include="Runtime\Graphics\Direct3D11\vaDirectXTools.cpp" />
+    <ClCompile Include="Runtime\Graphics\Direct3D11\VertexType.cpp" />
     <ClCompile Include="Runtime\Math\FloatConversion.cpp" />
     <ClCompile Include="Runtime\Math\Matrix3x3.cpp" />
     <ClCompile Include="Runtime\Math\Matrix4x4.cpp" />
     <ClCompile Include="Runtime\Math\Quaternion.cpp" />
     <ClCompile Include="Runtime\Math\Vector2.cpp" />
     <ClCompile Include="Runtime\Math\Vector3.cpp" />
+    <ClCompile Include="Transform.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MyShell\MyGame.rc" />
