@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="11" SoundbankVersion="125">
+	<RootPaths>
+		<ProjectRoot>C:\Users\helloworld\Documents\WwiseProjects\Demo1\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\helloworld\Documents\WwiseProjects\Demo1\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\helloworld\Documents\WwiseProjects\Demo1\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\Users\helloworld\Documents\WwiseProjects\Demo1\GeneratedSoundBanks\Windows\</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="352130103" Language="SFX">
+			<ObjectPath>\SoundBanks\Default Work Unit\Birds</ObjectPath>
+			<ShortName>Birds</ShortName>
+			<Path>Birds.bnk</Path>
+			<IncludedEvents>
+				<Event Id="3168847875" Name="Play_01" ObjectPath="\Events\Default Work Unit\Play_01"/>
+				<Event Id="3168847872" Name="Play_02" ObjectPath="\Events\Default Work Unit\Play_02"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="383710238" Language="SFX">
+					<ShortName>sound\heart_loop.wav</ShortName>
+					<Path>SFX\sound\heart_loop_F7D0E330.wem</Path>
+				</File>
+				<File Id="417362586" Language="SFX">
+					<ShortName>sound\bgm_city_loop.wav</ShortName>
+					<Path>SFX\sound\bgm_city_loop_AD29F36A.wem</Path>
+				</File>
+				<File Id="487231046" Language="SFX">
+					<ShortName>sound\bgm_login_loop.wav</ShortName>
+					<Path>SFX\sound\bgm_login_loop_AD29F36A.wem</Path>
+				</File>
+				<File Id="835603666" Language="SFX">
+					<ShortName>sound\20309.wav</ShortName>
+					<Path>SFX\sound\20309_F7D0E330.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>
