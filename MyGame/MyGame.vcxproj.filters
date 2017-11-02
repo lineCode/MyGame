@@ -31,6 +31,12 @@
     <Filter Include="Plugins\Wwise\C3Sound">
       <UniqueIdentifier>{cd61dadc-e995-4594-9645-0361b0eb4224}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Runtime">
+      <UniqueIdentifier>{e0315f6d-3f00-4246-b758-260401066cfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Runtime\Math">
+      <UniqueIdentifier>{6cf29e5d-335d-451c-aaba-647722d9a8e8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseCode\MyString.h">
@@ -153,6 +159,21 @@
     <ClInclude Include="MyShell\Resource.h">
       <Filter>MyShell\Resource</Filter>
     </ClInclude>
+    <ClInclude Include="Runtime\Math\Quaternion.h">
+      <Filter>Runtime\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Runtime\Math\FloatConversion.h">
+      <Filter>Runtime\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Runtime\Math\Vector2.h">
+      <Filter>Runtime\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Runtime\Math\Vector3.h">
+      <Filter>Runtime\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Runtime\Math\Vector4.h">
+      <Filter>Runtime\Math</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BaseCode\MyString.cpp">
@@ -202,6 +223,15 @@
     </ClCompile>
     <ClCompile Include="MyShell\Main.cpp">
       <Filter>MyShell</Filter>
+    </ClCompile>
+    <ClCompile Include="Runtime\Math\FloatConversion.cpp">
+      <Filter>Runtime\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Runtime\Math\Vector2.cpp">
+      <Filter>Runtime\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Runtime\Math\Vector3.cpp">
+      <Filter>Runtime\Math</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

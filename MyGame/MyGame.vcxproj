@@ -91,7 +91,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;NANOVG_D3D11;NANOVG_D3D11_IMPLEMENTATION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>BaseCode;Plugins\\ImGUI;Plugins\\Wwise;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>BaseCode;Runtime;Plugins\\ImGUI;Plugins\\Wwise;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -117,7 +117,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;NANOVG_D3D11;NANOVG_D3D11_IMPLEMENTATION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>BaseCode;Plugins\\ImGUI;Plugins\\Wwise;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>BaseCode;Runtime;Plugins\\ImGUI;Plugins\\Wwise;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -185,6 +185,11 @@
     <ClInclude Include="Plugins\Wwise\C3Sound\C3SoundBase.h" />
     <ClInclude Include="Plugins\Wwise\C3Sound\C3SoundGameObj.h" />
     <ClInclude Include="Plugins\Wwise\C3Sound\Wwise_IDs.h" />
+    <ClInclude Include="Runtime\Math\FloatConversion.h" />
+    <ClInclude Include="Runtime\Math\Quaternion.h" />
+    <ClInclude Include="Runtime\Math\Vector2.h" />
+    <ClInclude Include="Runtime\Math\Vector3.h" />
+    <ClInclude Include="Runtime\Math\Vector4.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BaseCode\BaseFunc.cpp" />
@@ -203,6 +208,9 @@
     <ClCompile Include="Plugins\Imgui\imgui_impl_Render.cpp" />
     <ClCompile Include="Plugins\Nanovg\nanovg\demo.c" />
     <ClCompile Include="Plugins\Nanovg\nanovg\nanovg.c" />
+    <ClCompile Include="Runtime\Math\FloatConversion.cpp" />
+    <ClCompile Include="Runtime\Math\Vector2.cpp" />
+    <ClCompile Include="Runtime\Math\Vector3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MyShell\MyGame.rc" />

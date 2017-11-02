@@ -29,3 +29,16 @@
 #define	IF_NOT(x)  if( (!(x)) ? 1 : 0 )
 #endif
 #endif
+
+//----------------------------------------------------------
+#ifndef DebugAssertIf
+#ifdef _DEBUG
+#define	DebugAssertIf(x) \
+	if(x)	\
+{\
+	}
+#else
+#define	DebugAssertIf(x)  if( (!(x)) ? 1 : 0 )
+#endif
+#endif
+

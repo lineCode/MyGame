@@ -5,6 +5,9 @@
 #include "C3Sound/Wwise_IDs.h"
 #pragma comment(lib,"C3Sound\\C3Sound.lib")
 
+#include "Math/Vector2.h"
+#include "Math/Vector3.h"
+#include "Math/Vector4.h"
 
 
 CGameMain g_gameMain;
@@ -15,6 +18,7 @@ CGameMain::CGameMain()
 {
 	m_pBackSound = NULL;
 	m_hWnd = NULL;
+
 }
 
 
