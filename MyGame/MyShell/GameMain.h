@@ -57,6 +57,9 @@ public:
 
 private:
 	class C3SoundGameObj* m_pBackSound;
+	HWND m_hWnd;
+	int m_nWidth;
+	int m_nHeight;
 };
 
 extern CGameMain g_gameMain;
