@@ -19,7 +19,7 @@ typedef Matrix4x4f Matrix;
 typedef Matrix4x4f XMMATRIX;
 
 typedef  Vector4f XMFLOAT4;
-
+typedef  Vector3f XMFLOAT3;
 typedef  Vector2f XMFLOAT2;
 
 /************************************************************************/
@@ -66,6 +66,9 @@ public:
 	void ShowRectTest();
 
 	void SetDebug(bool btest) { m_bDebug = btest; }
+
+	XMMATRIX GetShow2DMatrix();
+
 public:
 	void DrawPrimitiveUP(PrimitiveType PrimitiveType, unsigned int PrimitiveCount,
 		VertexPositionColorTexture *pVertexs, Matrix model = Matrix::identity,

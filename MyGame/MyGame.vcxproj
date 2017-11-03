@@ -91,11 +91,11 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;NANOVG_D3D11;NANOVG_D3D11_IMPLEMENTATION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>BaseCode;Runtime;Plugins\\ImGUI;Plugins\\Wwise;Plugins\\Nanovg;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>BaseCode;Runtime;Plugins\\ImGUI;Plugins\\Wwise;Plugins\\Nanovg;../FreeType2/FreeType2-2.4.12/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <AdditionalLibraryDirectories>Plugins\\Wwise\\C3Sound</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>Plugins\\Wwise\\C3Sound;../FreeType2/FreeType2-2.4.12/lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -193,6 +193,7 @@
     <ClInclude Include="Runtime\Graphics\Direct3D11\D3D11Viewport.h" />
     <ClInclude Include="Runtime\Graphics\Direct3D11\D3DBufferSample.h" />
     <ClInclude Include="Runtime\Graphics\Direct3D11\DeviceManager.h" />
+    <ClInclude Include="Runtime\Graphics\Direct3D11\MyFont.h" />
     <ClInclude Include="Runtime\Graphics\Direct3D11\Sprite.h" />
     <ClInclude Include="Runtime\Graphics\Direct3D11\vaDirectXTools.h" />
     <ClInclude Include="Runtime\Graphics\Direct3D11\VertexType.h" />
@@ -230,6 +231,7 @@
     <ClCompile Include="Runtime\Graphics\Direct3D11\D3D11Viewport.cpp" />
     <ClCompile Include="Runtime\Graphics\Direct3D11\D3DBufferSample.cpp" />
     <ClCompile Include="Runtime\Graphics\Direct3D11\DeviceManager.cpp" />
+    <ClCompile Include="Runtime\Graphics\Direct3D11\MyFont.cpp" />
     <ClCompile Include="Runtime\Graphics\Direct3D11\Sprite.cpp" />
     <ClCompile Include="Runtime\Graphics\Direct3D11\vaDirectXTools.cpp" />
     <ClCompile Include="Runtime\Graphics\Direct3D11\VertexType.cpp" />

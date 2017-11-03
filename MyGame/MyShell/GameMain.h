@@ -4,6 +4,7 @@
 #include "MyTimer.h"
 
 #include "nanovg/demo.h"
+#include "Graphics/Direct3D11/MyFont.h"
 
 using namespace  XPG;
 
@@ -21,6 +22,7 @@ public:
 
 	Signal1< float >                  event_Tick;
 	Signal0< void >                   event_Render;
+
 
 	//static LRESULT CALLBACK WndProcStatic( HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam );
 	typedef LRESULT & LRESULTREF;
@@ -75,7 +77,7 @@ private:
 
 	struct NVGcontext* NVGcontextPtr;
 	DemoData data;
-
+	FontRender fontRender;
 };
 
 extern CGameMain g_gameMain;

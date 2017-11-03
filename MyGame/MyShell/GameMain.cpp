@@ -106,7 +106,7 @@ bool CGameMain::InitGameMain(HINSTANCE ins, HWND hWnd, int nWidth, int nHeight, 
 	g_objSprite.InitRHI();
 	g_objSprite.ResetSize(nWidth, nHeight);
 
-
+	fontRender.init();
 	bool bRet = InitSoundEngine("Res", "English(US)");
 	if (!m_pBackSound)
 	{
@@ -176,7 +176,10 @@ void CGameMain::ProcessGame()
 	nvgEndFrame(NVGcontextPtr);
 
 	g_objSprite.ShowRect(100, 100, 200, 200, Vector4f(1, 0, 0, 1), (float)(m_tmAddTime.GetPassTime() / 1000.0)*XM_PIDIV2);
+	fontRender.DrawString(L"你好,王建设,要不要去买水", 300, 20);
 
+
+	fontRender.DrawString(L"走不走", 300, 50);
 	m_pD3D11Viewport->Flip();
 }
 

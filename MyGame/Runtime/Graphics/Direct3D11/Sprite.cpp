@@ -7,7 +7,7 @@
 
 
 //获取绘制2D的矩阵
-XMMATRIX GetShow2DMatrix(int nWidth, int nHegith)
+XMMATRIX GetShow2DMatrixTmp(int nWidth, int nHegith)
 {
 	// Transform NDC space [-1,+1]^2 to screen space [0,1]^2
 	XMMATRIX toTexSpace;
@@ -119,11 +119,11 @@ void Sprite::InitRHI()
 	shaderPtr = std::make_shared<D3D11Shader>();
 	shaderPtr->CompileFromFile("shader\\sprite.hlsl",VS);
 	shaderPtr->CompileFromFile("shader\\sprite.hlsl",PS);
-	shaderPtr->CompileFromFile("shader\\sprite.hlsl", GS);
+//	shaderPtr->CompileFromFile("shader\\sprite.hlsl", GS);
 
 	shaderPtr->CreateGPUBuffer(VS);
 	shaderPtr->CreateGPUBuffer(PS);
-	shaderPtr->CreateGPUBuffer(GS);
+	//shaderPtr->CreateGPUBuffer(GS);
 
 	shaderPtr->CreateInputLayout<VertexPositionColorTexture>(&m_pInputLayout);
 
@@ -204,7 +204,7 @@ void Sprite::ShowRect(int x1, int y1, int x2, int y2, const XMFLOAT4& color /*= 
 		{ LeftBottom, color, XMFLOAT2(0, 1) }
 	};
 
-	XMMATRIX toTexSpace = GetShow2DMatrix(m_nWidth, m_nHeight);
+	XMMATRIX toTexSpace = GetShow2DMatrixTmp(m_nWidth, m_nHeight);
 	Quaternionf q = EulerToQuaternion(Vector3(0, 0, dt));
 	Matrix4x4f rot;
 	QuaternionToMatrix(q, rot);
@@ -256,6 +256,11 @@ void Sprite::CreateIndexBuffer(int nType, int nSize)
 	{
 		return;
 	}
+}
+
+XMMATRIX Sprite::GetShow2DMatrix()
+{
+	return GetShow2DMatrixTmp(m_nWidth, m_nHeight);
 }
 
 void Sprite::DrawPrimitiveUP(PrimitiveType PrimitiveType, unsigned int PrimitiveCount, VertexPositionColorTexture *pVertexs, Matrix model /*= XMMatrixIdentity()*/, ID3D11ShaderResourceView*pTexture /*= NULL*/, SpriteType spriteType /*= COLOR_TEX*/)
@@ -328,6 +333,9 @@ void Sprite::DrawPrimitiveUP(PrimitiveType PrimitiveType, unsigned int Primitive
    shaderPtr->PSSetConstantBuffers("SpriteType", &spriteType);
    XMFLOAT4 color = { 0.5f,0.5f,0.5f,0.5f };
    shaderPtr->PSSetConstantBuffers("defaultColor", &color);
+   shaderPtr->PSSetShaderResources("shaderTexture", pTexture);
+
+   
    shaderPtr->Apply();
 
 
@@ -344,7 +352,7 @@ void Sprite::ShowRectTest()
 	unsigned int offset;
 	stride = sizeof(VertexPositionColorTexture);
 	offset = 0;
-	XMMATRIX toTexSpace = GetShow2DMatrix(m_nWidth, m_nHeight);
+	XMMATRIX toTexSpace = GetShow2DMatrixTmp(m_nWidth, m_nHeight);
 
 	pDeviceContext->IASetInputLayout(m_pInputLayout);
 	pDeviceContext->IASetPrimitiveTopology((D3D_PRIMITIVE_TOPOLOGY)D3D_PRIMITIVE_TOPOLOGY_LINELIST);
@@ -386,7 +394,7 @@ void Sprite::ShowRectTest(int x1, int y1, int x2, int y2, const XMFLOAT4& color 
 		{ LeftBottom, color, XMFLOAT2(0, 1) }
 	};
 
-	XMMATRIX toTexSpace = GetShow2DMatrix(m_nWidth, m_nHeight);
+	XMMATRIX toTexSpace = GetShow2DMatrixTmp(m_nWidth, m_nHeight);
 	toTexSpace =  toTexSpace;
 	ID3D11DeviceContext* pDeviceContext = g_objDeviceManager.GetDeviceContext();
 	int ByteWidth = sizeof(VertexPositionColorTexture) * 8; //缓冲区大小

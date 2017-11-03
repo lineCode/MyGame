@@ -220,6 +220,9 @@
     <ClInclude Include="Plugins\Imgui\imgui_impl_dx11.h">
       <Filter>Plugins\Imgui</Filter>
     </ClInclude>
+    <ClInclude Include="Runtime\Graphics\Direct3D11\MyFont.h">
+      <Filter>Runtime\Graphics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BaseCode\MyString.cpp">
@@ -321,6 +324,9 @@
     </ClCompile>
     <ClCompile Include="Plugins\Imgui\imgui_impl_dx11.cpp">
       <Filter>Plugins\Imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="Runtime\Graphics\Direct3D11\MyFont.cpp">
+      <Filter>Runtime\Graphics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
