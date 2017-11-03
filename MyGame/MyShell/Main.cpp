@@ -237,12 +237,20 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         break;
     case WM_PAINT:
         {
-            PAINTSTRUCT ps;
+		g_gameMain.ProcessGame();
+		::ValidateRect(hWnd, NULL);
+    /*     
+			PAINTSTRUCT ps;
             HDC hdc = BeginPaint(hWnd, &ps);
             // TODO: 在此处添加使用 hdc 的任何绘图代码...
-            EndPaint(hWnd, &ps);
+            EndPaint(hWnd, &ps);*/
         }
         break;
+	case  WM_SIZE:
+	{
+		g_gameMain.OnResize();
+	}
+	break;
     case WM_DESTROY:
         PostQuitMessage(0);
 		g_objTestBaseCode.Release();

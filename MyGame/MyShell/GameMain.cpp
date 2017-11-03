@@ -26,6 +26,7 @@ CGameMain::CGameMain()
 	m_pBackSound = NULL;
 	m_hWnd = NULL;
 	m_pSample = new  D3DBufferSample();
+	m_bInit = false;
 }
 
 
@@ -113,19 +114,54 @@ bool CGameMain::InitGameMain(HINSTANCE ins, HWND hWnd, int nWidth, int nHeight, 
 			m_pBackSound->PostEvent(AK::EVENTS::PLAY_01);
 		}
 	}
+	m_bInit = true;
 	return true;
+}
+
+void CGameMain::OnResize()
+{
+	if (m_bInit&&m_hWnd)
+	{
+		RECT rect;
+		::GetClientRect(m_hWnd, &rect);
+		int nWidth = rect.right - rect.left;
+		int nHeight = rect.bottom - rect.top;
+		if (m_nWidth != nWidth || m_nHeight != nHeight)
+		{
+			m_nWidth = nWidth;
+			m_nHeight = nHeight;
+			m_pD3D11Viewport->Resize(m_nWidth, m_nHeight,false);
+			g_objSprite.ResetSize(nWidth, nHeight);
+		}
+	}
 }
 
 void CGameMain::ProcessGame()
 {
+	if (!m_bInit)
+	{
+		return;
+	}
+	if (!m_tmUpdateAddTime.IsActive())
+	{
+		m_tmUpdateAddTime.Startup(1);
+	}
+	if (!m_tmAddTime.IsActive())
+	{
+		m_tmAddTime.Startup(1);
+	}
+	
+	float fTimePass = (float)(m_tmUpdateAddTime.GetPassTime() / 1000.0);
+	m_tmUpdateAddTime.Update();
+
 	ProcressSound();
 	ImGui_ImplDX11_NewFrame();
 	event_Render();
 	m_pD3D11Viewport->Begin();
-	g_objSprite.ShowRect(300, 300, 400, 400);
+	g_objSprite.ShowRect(100, 100, 200, 200, Vector4f(1,0,0,1), (float)(m_tmAddTime.GetPassTime() / 1000.0)*XM_PIDIV2);
 
 	m_pSample->OnRender();
-	ShowGUI();
+	//ShowGUI();
 	
 
 	m_pD3D11Viewport->Flip();
@@ -146,8 +182,7 @@ void CGameMain::ShowGUI()
 	ImGuiIO& io = ImGui::GetIO();
 	if (io.DisplaySize.x <= 0.0f || io.DisplaySize.y <= 0.0f)
 		return;
-	int nWidth = io.DisplaySize.x;
-	int nHegith = io.DisplaySize.y;
+
 	ImGui::SetNextWindowSize(ImVec2(200, io.DisplaySize.y), ImGuiSetCond_Always);
 	if (ImGui::Begin("光效查看", &p_open, ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoResize))
 	{

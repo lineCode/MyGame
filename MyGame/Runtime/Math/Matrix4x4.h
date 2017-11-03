@@ -25,13 +25,13 @@ ENUM_FLAGS(TransformType);
 bool InvertMatrix4x4_Full(const float* m, float* out);
 bool InvertMatrix4x4_General3D(const float* m, float* out);
 
-
+//列向量，内部存储的还是行优先的
+//矩阵的变换 要从右往左看
 /// Matrices in unity are column major.
 class  Matrix4x4f
 {
 public:
 	float m_Data[16];
-
 
 
 	Matrix4x4f() {}
@@ -45,6 +45,8 @@ public:
 
 	float operator [] (int index) const { return m_Data[index]; }
 	float& operator [] (int index) { return m_Data[index]; }
+
+
 
 	Matrix4x4f& operator *= (const Matrix4x4f& inM);
 
@@ -117,6 +119,12 @@ public:
 	static const Matrix4x4f identity;
 };
 
+
+// Binary operators
+Matrix4x4f operator* (const Matrix4x4f& M1, const Matrix4x4f& M2);
+
+
+
 bool CompareApproximately(const Matrix4x4f& lhs, const Matrix4x4f& rhs, float dist = Vector3f::epsilon);
 
 /// Transforms an array of vertices. input may be the same as output.
@@ -147,6 +155,13 @@ void MultiplyMatrixArrayWithBase4x4REF(const Matrix4x4f* __restrict base,
 #define MultiplyMatrixArray4x4			MultiplyMatrixArray4x4REF
 #define MultiplyMatrixArrayWithBase4x4	MultiplyMatrixArrayWithBase4x4REF
 
+
+inline Matrix4x4f operator* (const Matrix4x4f& inM1, const Matrix4x4f& inM2)
+{
+	Matrix4x4f tmp;
+	MultiplyMatrices4x4(&inM1, &inM2, &tmp);
+	return tmp;
+}
 
 
 inline Vector3f Matrix4x4f::GetAxisX() const {

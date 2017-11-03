@@ -205,7 +205,26 @@ void Sprite::ShowRect(int x1, int y1, int x2, int y2, const XMFLOAT4& color /*= 
 	};
 
 	XMMATRIX toTexSpace = GetShow2DMatrix(m_nWidth, m_nHeight);
-	DrawPrimitiveUP(PRIMITIVE_LINELIST, 8, vertices, toTexSpace, NULL, SpriteType::ONLY_COLOR);
+	Quaternionf q = EulerToQuaternion(Vector3(0, 0, dt));
+	Matrix4x4f rot;
+	QuaternionToMatrix(q, rot);
+
+	XMMATRIX toPos;
+	XMMATRIX toPos1;
+
+	Matrix4x4f ret;
+	ret = toTexSpace*toPos1.SetTranslate(Vector3(x, y, 0))*rot*toPos.SetTranslate(Vector3(-x, -y, 0));
+
+/*
+	toPos.SetTranslate(Vector3(-x, -y, 0));
+	MultiplyMatrices4x4(&rot, &toPos, &ret);//平移回原点 旋转
+	toPos.SetTranslate(Vector3(x, y, 0));
+	MultiplyMatrices4x4(&toPos, &ret, &ret1);//平移回原点
+	MultiplyMatrices4x4(&toTexSpace, &ret1, &ret);//平移回原点*/
+	
+
+
+	DrawPrimitiveUP(PRIMITIVE_LINELIST, 8, vertices, ret, NULL, SpriteType::ONLY_COLOR);
 }
 
 void Sprite::CreateVertexBuffer(int nType, int nSize)

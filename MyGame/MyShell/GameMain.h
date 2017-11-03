@@ -1,7 +1,7 @@
 #pragma once
 #include "MySignal.h"
 #include "PlatformInterface.h"
-
+#include "MyTimer.h"
 
 
 
@@ -38,6 +38,7 @@ public:
 
 	bool InitGameMain(HINSTANCE ins, HWND hWnd, int nWidth, int nHeight, void* hIosMainWnd);
 
+	void OnResize();
 
 	void OnLButtonDown(int x, int y, __int64 iIndex, float fForce = .0f);
 	void OnLButtonUp(int x, int y, __int64 iIndex);
@@ -67,6 +68,12 @@ private:
 
 	class D3D11Viewport* m_pD3D11Viewport;
 	class D3DBufferSample* m_pSample;
+
+	CMyTimer m_tmUpdateAddTime;
+	CMyTimer m_tmAddTime;
+	bool m_bInit;
+
+
 };
 
 extern CGameMain g_gameMain;
