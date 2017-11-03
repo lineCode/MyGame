@@ -3,7 +3,7 @@
 #include "PlatformInterface.h"
 #include "MyTimer.h"
 
-
+#include "nanovg/demo.h"
 
 using namespace  XPG;
 
@@ -73,6 +73,8 @@ private:
 	CMyTimer m_tmAddTime;
 	bool m_bInit;
 
+	struct NVGcontext* NVGcontextPtr;
+	DemoData data;
 
 };
 

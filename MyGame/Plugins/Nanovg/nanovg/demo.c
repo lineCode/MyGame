@@ -670,10 +670,10 @@ void drawColorwheel(NVGcontext* vg, float x, float y, float w, float h, float t)
 
 	nvgSave(vg);
 
-	/*	nvgBeginPath(vg);
+	nvgBeginPath(vg);
 	nvgRect(vg, x,y,w,h);
 	nvgFillColor(vg, nvgRGBA(255,0,0,128));
-	nvgFill(vg);*/
+	nvgFill(vg);
 
 	cx = x + w*0.5f;
 	cy = y + h*0.5f;
@@ -1099,8 +1099,9 @@ void renderDemo(NVGcontext* vg, float mx, float my, float width, float height,
 
 	nvgSave(vg);
 	if (blowup) {
-		nvgRotate(vg, sinf(t*0.3f)*5.0f / 180.0f*NVG_PI);
 		nvgScale(vg, 2.0f, 2.0f);
+		nvgRotate(vg, sinf(t*0.3f)*5.0f / 180.0f*NVG_PI);
+	
 	}
 
 	// Widgets

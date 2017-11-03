@@ -17,6 +17,9 @@
 #include "imgui/imgui.h"
 #include "imgui_impl_dx11.h"
 
+#include "nanovg/nanovg.h"
+#include "nanovg/nanovg_d3d11.h"
+
 CGameMain g_gameMain;
 
 
@@ -114,6 +117,11 @@ bool CGameMain::InitGameMain(HINSTANCE ins, HWND hWnd, int nWidth, int nHeight, 
 			m_pBackSound->PostEvent(AK::EVENTS::PLAY_01);
 		}
 	}
+	NVGcontextPtr = nvgCreateD3D11(g_objDeviceManager.GetDevice(), NVG_ANTIALIAS || NVG_STENCIL_STROKES);
+	if (loadDemoData(NVGcontextPtr, &data) == -1)
+	{
+		return false;
+	}
 	m_bInit = true;
 	return true;
 }
@@ -158,11 +166,16 @@ void CGameMain::ProcessGame()
 	ImGui_ImplDX11_NewFrame();
 	event_Render();
 	m_pD3D11Viewport->Begin();
-	g_objSprite.ShowRect(100, 100, 200, 200, Vector4f(1,0,0,1), (float)(m_tmAddTime.GetPassTime() / 1000.0)*XM_PIDIV2);
+	//g_objSprite.ShowRect(100, 100, 200, 200, Vector4f(1,0,0,1), (float)(m_tmAddTime.GetPassTime() / 1000.0)*XM_PIDIV2);
 
 	m_pSample->OnRender();
-	//ShowGUI();
+	ShowGUI();
 	
+	nvgBeginFrame(NVGcontextPtr, m_nWidth, m_nHeight, 1.0f);
+	renderDemo(NVGcontextPtr, (float)0, (float)0, (float)m_nWidth, (float)m_nHeight, (float)(m_tmAddTime.GetPassTime() / 1000.0), 0, &data);
+	nvgEndFrame(NVGcontextPtr);
+
+	g_objSprite.ShowRect(100, 100, 200, 200, Vector4f(1, 0, 0, 1), (float)(m_tmAddTime.GetPassTime() / 1000.0)*XM_PIDIV2);
 
 	m_pD3D11Viewport->Flip();
 }
@@ -186,8 +199,8 @@ void CGameMain::ShowGUI()
 	ImGui::SetNextWindowSize(ImVec2(200, io.DisplaySize.y), ImGuiSetCond_Always);
 	if (ImGui::Begin("光效查看", &p_open, ImGuiWindowFlags_NoMove | ImGuiWindowFlags_NoSavedSettings | ImGuiWindowFlags_NoResize))
 	{
-		ImGui::End();
-	}
+		
+	}ImGui::End();
 	ImGui::ShowTestWindow(&p_open);
 	ImGui::Render();
 }

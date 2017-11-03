@@ -64,6 +64,16 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     LoadStringW(hInstance, IDC_MYGAME, szWindowClass, MAX_LOADSTRING);
     MyRegisterClass(hInstance);
 
+#if defined(DEBUG) || defined(_DEBUG)
+	FILE *f(NULL);
+	if (AllocConsole())
+	{
+		//freopen_s(&f, "CONOUT$", "w", stdout);
+		freopen_s(&f, "CONOUT$", "w+t", stdout);// 申请写
+		freopen_s(&f, "CONIN$", "r+t", stdin);  // 申请读
+	}
+#endif
+
     // 执行应用程序初始化: 
     if (!InitInstance (hInstance, nCmdShow))
     {
