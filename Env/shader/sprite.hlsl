@@ -81,7 +81,7 @@ PixelInputType VS(VertexInputType input)
 
 	// Store the input color for the pixel shader to use.
 	output.color = input.color;
-	//output.tex = input.tex;
+	output.tex = input.tex;
 	return output;
 }
 
@@ -130,7 +130,7 @@ float4 PS(PixelInputType input) : SV_TARGET
 {
 	// Sample the pixel color from the texture using the sampler at this texture coordinate location.
 	float4 textureColor =  input.color;
-	return textureColor;
+	//return textureColor;
 	if(spriteType == 0)
 	{
 		return textureColor* defaultColor;
@@ -142,8 +142,8 @@ float4 PS(PixelInputType input) : SV_TARGET
 	}
 	else if(spriteType == 2)
 	{
-		float4 diffColor = shaderTexture.Sample(SampleType, input.tex);
-		return diffColor * textureColor;
+		textureColor *= shaderTexture.Sample(SampleType, input.tex).a;
+		return textureColor;
 	}
 	return textureColor;
 }
